@@ -48,5 +48,24 @@
         echo "<li>\$c = $c</li>";
         echo '</ul>';
     ?>
+
+<h3>Segunda asignación de valores</h3>
+    <p>$a = "PHP server";<br />
+       $b = &$a;</p>
+    <?php
+        $a = "PHP server";
+        $b = &$a;
+    
+        echo '<h4>Valores de las variables después de la segunda asignación:</h4>';
+        echo '<ul>';
+        echo "<li>\$a = $a</li>";
+        echo "<li>\$b = $b</li>";
+        echo "<li>\$c = $c</li>";
+        echo '</ul>';
+
+        echo '<h3>Explicación</h3>';
+        echo '<p>En la segunda asignación, la variable $b ahora es una referencia a $a, por lo que cualquier cambio en $a también se refleja en $b. ';
+        echo 'Sin embargo, $c sigue apuntando a su asignación original de $a, por lo que también cambia cuando $a se modifica.</p>';
+    ?>
 </body>
 </html>
