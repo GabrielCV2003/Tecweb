@@ -67,5 +67,37 @@
         echo '<p>En la segunda asignación, la variable $b ahora es una referencia a $a, por lo que cualquier cambio en $a también se refleja en $b. ';
         echo 'Sin embargo, $c sigue apuntando a su asignación original de $a, por lo que también cambia cuando $a se modifica.</p>';
     ?>
+
+<h2>Ejercicio 3</h2>
+    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables (imprime todos los componentes de los arreglos).</p>
+    <?php
+        $a = "PHP5";
+        echo "<p>Después de asignar \$a = 'PHP5': \$a = $a</p>";
+
+        $z[] = &$a;
+        echo "<p>Después de asignar \$z[] = &\$a: \$z[0] = {$z[0]}</p>";
+
+        $b = "5a version de PHP";
+        echo "<p>Después de asignar \$b = '5a version de PHP': \$b = $b</p>";
+
+        // Modificado: Extraemos solo el número de $b antes de multiplicar para evitar el error
+        $c = intval($b) * 10;
+        echo "<p>Después de asignar \$c = intval(\$b) * 10: \$c = $c</p>";
+
+        $a .= $b;
+        echo "<p>Después de asignar \$a .= \$b: \$a = $a</p>";
+
+        $b *= $c;
+        echo "<p>Después de asignar \$b *= \$c: \$b = $b</p>";
+
+        $z[0] = "MySQL";
+        echo "<p>Después de asignar \$z[0] = 'MySQL': \$z[0] = {$z[0]}</p>";
+
+        echo '<h3>Explicación</h3>';
+        echo '<p>La variable $a inicialmente contenía "PHP5", y al asignarle una referencia en $z[0], cualquier cambio en $a se reflejaba en $z[0]. ';
+        echo 'Cuando $a se concatenó con $b, su valor cambió, lo que afectó también a $z[0]. Posteriormente, al reasignar "MySQL" a $z[0], ';
+        echo 'la referencia entre $a y $z[0] se rompió, por lo que ya no reflejan el mismo valor.</p>';
+    ?>
+
 </body>
 </html>
