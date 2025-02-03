@@ -173,5 +173,39 @@
     echo "<p>La función var_dump() permite ver los valores reales en booleano.</p>";
 ?>
 
+<h2>Ejercicio 7</h2>
+<p>Usando la variable predefinida $_SERVER, determina lo siguiente:</p>
+<ul>
+    <li>a. La versión de Apache y PHP</li>
+    <li>b. El nombre del sistema operativo (servidor)</li>
+    <li>c. El idioma del navegador (cliente)</li>
+</ul>
+
+<?php
+    echo '<h4>Resultado de $_SERVER:</h4>';
+    echo '<ul>';
+
+    // a. La versión de Apache y PHP
+    echo "<li>Versión de Apache: ".$_SERVER['SERVER_SOFTWARE']."</li>";
+    echo "<li>Versión de PHP: ".phpversion()."</li>"; // Usamos phpversion() para obtener la versión de PHP
+
+    // b. El nombre del sistema operativo (servidor)
+    echo "<li>Sistema operativo del servidor: ".php_uname()."</li>"; // php_uname() devuelve información sobre el sistema operativo del servidor
+
+    // c. El idioma del navegador (cliente)
+    echo "<li>Idioma del navegador (cliente): ".$_SERVER['HTTP_ACCEPT_LANGUAGE']."</li>"; // $_SERVER['HTTP_ACCEPT_LANGUAGE'] devuelve el idioma preferido del navegador
+
+    echo '</ul>';
+
+    echo '<h3>Explicación</h3>';
+    echo '<p>La variable predefinida $_SERVER nos permite obtener información sobre el servidor y el cliente. En este caso, usamos:</p>';
+    echo '<ul>';
+    echo '<li><b>$_SERVER[\'SERVER_SOFTWARE\']</b> para obtener la versión del servidor web (Apache).</li>';
+    echo '<li><b>phpversion()</b> para obtener la versión de PHP instalada en el servidor.</li>';
+    echo '<li><b>php_uname()</b> para obtener información sobre el sistema operativo del servidor.</li>';
+    echo '<li><b>$_SERVER[\'HTTP_ACCEPT_LANGUAGE\']</b> para obtener el idioma preferido del cliente según la configuración de su navegador.</li>';
+    echo '</ul>';
+?>
+
 </body>
 </html>
