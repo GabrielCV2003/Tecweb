@@ -125,7 +125,7 @@
 
 <?php
     $a = "7 personas";
-    $b = (integer) $a;  // Convierte "7 personas" en 7
+    $b = (integer) $a;
     echo "<h4>Valores después de cada asignación:</h4>";
     echo "<ul>";
     echo "<li>Después de (integer) \$a: \$b = "; var_dump($b); echo "</li>";
