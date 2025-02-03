@@ -99,5 +99,22 @@
         echo 'la referencia entre $a y $z[0] se rompió, por lo que ya no reflejan el mismo valor.</p>';
     ?>
 
+<h2>Ejercicio 4</h2>
+    <p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de la matriz $GLOBALS o del modificador global de PHP.</p>
+    <?php
+        global $a, $b, $c, $z;
+
+        echo '<h4>Valores utilizando $GLOBALS:</h4>';
+        echo '<ul>';
+        echo "<li>\$a = ".$GLOBALS['a']."</li>";
+        echo "<li>\$b = ".$GLOBALS['b']."</li>";
+        echo "<li>\$c = ".$GLOBALS['c']."</li>";
+        echo "<li>\$z[0] = ".$GLOBALS['z'][0]."</li>";
+        echo '</ul>';
+
+        echo '<h3>Explicación</h3>';
+        echo '<p>En este ejercicio, utilizamos la matriz $GLOBALS para acceder a las variables globales desde cualquier parte del script.</p>';
+    ?>
+
 </body>
 </html>
