@@ -116,5 +116,27 @@
         echo '<p>En este ejercicio, utilizamos la matriz $GLOBALS para acceder a las variables globales desde cualquier parte del script.</p>';
     ?>
 
+<h2>Ejercicio 5</h2>
+<p>Dar el valor de las variables $a, $b, $c al final del siguiente script:</p>
+<p>$a = "7 personas";<br />
+   $b = (integer) $a;<br />
+   $a = "9E3";<br />
+   $c = (double) $a;</p>
+
+<?php
+    $a = "7 personas";
+    $b = (integer) $a;  // Convierte "7 personas" en 7
+    echo "<h4>Valores después de cada asignación:</h4>";
+    echo "<ul>";
+    echo "<li>Después de (integer) \$a: \$b = "; var_dump($b); echo "</li>";
+
+    $a = "9E3";  // PHP lo interpreta como 9000 en notación científica
+    echo "<li>Después de asignar '9E3' a \$a: \$a = "; var_dump($a); echo "</li>";
+
+    $c = (double) $a;  // Convierte "9E3" a 9000.0
+    echo "<li>Después de (double) \$a: \$c = "; var_dump($c); echo "</li>";
+    echo "</ul>";
+?>
+
 </body>
 </html>
