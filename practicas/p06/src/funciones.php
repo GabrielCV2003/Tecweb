@@ -81,5 +81,14 @@ function encontrarMultiploConDoWhile($numeroDado) {
         }
     } while (!$encontrado);
 }
+
+// Función para crear un arreglo con índices de 97 a 122 y valores de 'a' a 'z' (Ejercicio 4)
+function crearArregloLetras() {
+    $arreglo = [];
+    for ($i = 97; $i <= 122; $i++) {
+        $arreglo[$i] = chr($i); // Usar chr() para obtener el carácter ASCII
+    }
+    return $arreglo;
+}
 ?>
 

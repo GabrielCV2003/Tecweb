@@ -64,6 +64,19 @@
     } else {
         echo "<p>Por favor, proporciona un número en la URL. Ejemplo: ?numeroDado=7</p>";
     }
+
+    // Ejercicio 4: Crear un arreglo con índices de 97 a 122 y valores de 'a' a 'z'
+    echo "<h2>Ejercicio 4: Arreglo de letras</h2>";
+    $arregloLetras = crearArregloLetras();
+
+    // Mostrar el arreglo en una tabla
+    echo "<h3>Tabla de letras:</h3>";
+    echo "<table border='1'>";
+    echo "<tr><th>Índice</th><th>Letra</th></tr>";
+    foreach ($arregloLetras as $indice => $letra) {
+        echo "<tr><td>$indice</td><td>$letra</td></tr>";
+    }
+    echo "</table>";
     ?>
 </body>
 </html>
