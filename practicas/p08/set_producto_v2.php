@@ -31,8 +31,13 @@ if ($stmt_check->num_rows > 0) {
 }
 $stmt_check->close();
 
-$sql_insert = "INSERT INTO productos 
-               VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+/*$sql_insert = "INSERT INTO productos 
+               VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, 0)";
+$stmt_insert = $link->prepare($sql_insert);
+$stmt_insert->bind_param('sssdsis', $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen);
+*/
+$sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) 
+               VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt_insert = $link->prepare($sql_insert);
 $stmt_insert->bind_param('sssdsis', $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen);
 
