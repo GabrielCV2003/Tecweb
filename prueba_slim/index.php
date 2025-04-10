@@ -32,5 +32,18 @@ $app->post("/pruebapost", function( $request, $response, $args ){
     return $response;
 });
 
+//Ejemplo 4
+$app->get("/testjson", function( $request, $response, $args){
+    $data = [
+        ["nombre" => "Gabriel", "apellidos" => "Corona Valerio"],
+        ["nombre" => "Maria", "apellidos" => "Mendez Barragan"]
+    ];
+
+    $payload = json_encode($data, JSON_PRETTY_PRINT);
+
+    $response->getBody()->write($payload);
+    return $response->withHeader('Content-Type', 'application/json');
+});
+
 
 $app->run();
